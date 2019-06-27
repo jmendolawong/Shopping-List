@@ -21,7 +21,8 @@ $(function (){
 
     //toggles between checked/unchecked. Listens for button click and adds strikethrough if not checked 
     //and removes strikethrough if already checked
-    $('.shopping-item-toggle').click(function(e){
+    //Also need to use event delegation for dynamic items
+    $('ul').on('click', '.shopping-item-toggle', function(e){
         $(this).parent().siblings('.shopping-item').toggleClass('shopping-item__checked');
     });
 
